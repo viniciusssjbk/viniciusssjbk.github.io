@@ -8,29 +8,54 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
 }
+#voltar_topo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #00000000;
+    border-radius: 50%;
+    padding-left: 15px;
+    font-size: 30px;    
+    cursor: pointer;
+    z-index: 1000;
+    color: blue ; 
+    border: #00e1ff 2px solid;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    opacity: 0;
+}
+
+
+#voltar_topo:hover {
+    transform: translateY(-5px);
+}
+
 .container{
     margin-top: 10px;
 }
 .navbar{
     display: flex;
     justify-content: space-around;
+    font-size: 20px;
 }
+
 .navbar a{
     text-decoration: none;
     color: white;
-    font-size: 20px;
+
     font-family: monospace;
 }
 .navbar a:hover{
-    color: rgb(4, 45, 158);
+    color: rgb(90, 127, 228);
 }
 .logo{
     color: white;
     font-size: 30px;
     font-family: monospace;
+    opacity: 0.8;
 }
 .logo:hover{
-    color: rgb(4, 45, 158);
     animation: colortitle 2s infinite;
     cursor: pointer;
 }
@@ -39,13 +64,25 @@ body{
         color: white;
     }
     50%{
-        color: rgb(4, 45, 158);
+        color: rgb(4, 27, 160);
     }
     100%{
         color: white;
     }
 }
-
+@media (max-width: 600px) {
+  .navbar {
+    font-size: 12px;
+    justify-content: end;
+  }
+  .navbar a {
+    padding: 5px;
+  }
+  .logo {
+    font-size: 24px;
+  
+  }
+}
 #fundo {
     position: fixed;
     top: 0;
@@ -63,12 +100,12 @@ body{
 }
 .principal h2{
     font-family: 'Courier Prime';
-    color: #00ff41;
+    color: #00e1ff;
     font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
     position: relative;
-    text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
+    text-shadow: 0 0 5px #0044ff, 0 0 10px #003cff;
     animation: matrix-glow 2s infinite, glitch 5s infinite;
 }
 .principal p{
@@ -80,20 +117,21 @@ body{
 
 
 @keyframes matrix-glow {
-    0%, 100% { opacity: 1; text-shadow: 0 0 5px #00ff41; }
-    50% { opacity: 0.8; text-shadow: 0 0 20px #00ff41, 0 0 30px #003b00; }
+    0%, 100% { opacity: 1; text-shadow: 0 0 5px #1099e9; }
+    50% { opacity: 0.8; text-shadow: 0 0 20px #00a2ff, 0 0 30px #062066; }
 }
 
 @keyframes glitch {
     0%, 90%, 100% { transform: translate(0); }
-    92% { transform: translate(-2px, 2px); color: #adffad; }
+    92% { transform: translate(-2px, 2px); color: rgb(245, 208, 0); }
     94% { transform: translate(2px, -2px); }
-    96% { transform: translate(-2px, -2px); text-shadow: -2px 0 red, 2px 0 blue; }
+    96% { transform: translate(-2px, -2px); text-shadow: -2px 0 rgb(200, 255, 0), 2px 0 rgb(217, 255, 0); }
     98% { transform: translate(2px, 2px); }
 }
 
 #about{
     transform: translateY(400px);
+    opacity: 0;
 }
 .sobre_mim {
     color: white;
@@ -105,26 +143,37 @@ body{
 }
 .sobre_mim h2{
     font-family: 'Courier Prime';
-    color: #00ff41;
+    color: #006eff;
     font-size: 3rem;
     text-align: center;
-    text-shadow: 0 0 5px #00ff41, 0 0 10px #003b00;
+    text-shadow: 0 0 5px #006eff, 0 0 10px #02577e;
     
 }
+.sobre_mim p{
+    color: white;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+
+
+
 #projects{
-     transform: translateY(500px);
+     transform: translateY(600px);
+     opacity: 0;
 }
 .container-projetos{
     color: white;   
     text-align: center;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
-.title_project{
+.titulo_projeto{
     font-family: 'Courier Prime';
-    color: #00ff41;
+    color: #006eff;
     font-size: 3rem;
-    text-shadow: 0 0 5px #00ff41, 0 0 10px #003b00;
+    text-shadow: 0 0 5px #006eff, 0 0 10px #02577e;
     text-align: center;
 }
 .projeto{
@@ -135,15 +184,27 @@ body{
     font-family: monospace;
     
 }
+.projeto:hover{
+    background-color: rgba(57, 83, 167, 0.2);
+    transition: background-color 0.3s ease;
+    transform: translateY(-10px);
+}
+.projeto p{
+    color: white;
+    text-align: center;
+    text-justify: inter-word;
+}
 .projeto h3{
-    color: #08850e;
+    color: #006eff;
+    font-weight: bold;
+
 }
 .projeto a{
     text-decoration: none;
-    color: #00ff41;
+    color: #006eff;
 }
 .projeto a:hover{
-    color: #134720;
+    color: #132947;
 }
 .completo{
     color: #08850e;
@@ -154,21 +215,27 @@ body{
 .aprendendo{
     color: #ff8c00;
 }
+
+
+
+
+
 #contact{
-    transform: translateY(500px);
+    transform: translateY(800px);
     padding: 60px 20px;
     text-align: center;
+    opacity: 0;
 }
 
-.title_contact {
+.titulo_contato {
     font-family: 'Courier Prime';
-    color: #00ff41;
+    color: #006eff;
     font-size: 3rem;
-    text-shadow: 0 0 5px #00ff41, 0 0 10px #003b00;
+    text-shadow: 0 0 5px #006eff, 0 0 10px #02577e;
     text-align: center;
 }
 
-.container-contact {
+.container_contato {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -177,9 +244,9 @@ body{
     margin: 0 auto;
 }
 
-.contact-card {
+.contatos {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(0, 255, 65, 0.2);
+    border: 1px solid rgba(0, 102, 255, 0.2);
     padding: 25px;
     border-radius: 8px;
     min-width: 250px;
@@ -187,21 +254,21 @@ body{
     backdrop-filter: blur(5px);
 }
 
-.contact-card:hover {
+.contatos:hover {
     transform: translateY(-10px);
-    border-color: #00ff41;
-    box-shadow: 0 10px 20px rgba(0, 255, 65, 0.1);
-    background: rgba(0, 255, 65, 0.05);
+    border-color: #006eff;
+    box-shadow: 0 10px 20px rgba(0, 102, 255, 0.1);
+    background: rgba(0, 102, 255, 0.05);
 }
 
-.contact-card h3 {
-    color: #00ff41;
+.contatos h3 {
+    color: #006eff;
     font-size: 1rem;
     margin-bottom: 15px;
     font-family: 'Courier New', monospace;
 }
 
-.contact-card p, .contact-card a {
+.contatos p, .contatos a {
     color: #ffffff;
     text-decoration: none;
     font-size: 0.95rem;
@@ -209,12 +276,18 @@ body{
     transition: color 0.3s;
 }
 
-.contact-card a:hover {
-    color: #00ff41;
+.contatos a:hover {
+    color: #006eff;
 }
 
 @media (max-width: 768px) {
-    .contact-card {
+    .contatos {
         width: 100%;
     }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+    
 }
