@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+.container{
+    margin-top: 10px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: monospace;
+}
+.navbar a:hover{
+    color: rgb(4, 45, 158);
+}
+.logo{
+    color: white;
+    font-size: 30px;
+    font-family: monospace;
+}
+.logo:hover{
+    color: rgb(4, 45, 158);
+    animation: colortitle 2s infinite;
+    cursor: pointer;
+}
+@keyframes colortitle{
+    0%{
+        color: white;
+    }
+    50%{
+        color: rgb(4, 45, 158);
+    }
+    100%{
+        color: white;
+    }
+}
+
+#fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+.principal{
+    color: white;
+    text-align: start;
+    padding: 50px;
+    font-family: monospace;
+
+}
+.principal h2{
+    font-family: 'Courier Prime';
+    color: #00ff41;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
+    animation: matrix-glow 2s infinite, glitch 5s infinite;
+}
+.principal p{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+
+
+@keyframes matrix-glow {
+    0%, 100% { opacity: 1; text-shadow: 0 0 5px #00ff41; }
+    50% { opacity: 0.8; text-shadow: 0 0 20px #00ff41, 0 0 30px #003b00; }
+}
+
+@keyframes glitch {
+    0%, 90%, 100% { transform: translate(0); }
+    92% { transform: translate(-2px, 2px); color: #adffad; }
+    94% { transform: translate(2px, -2px); }
+    96% { transform: translate(-2px, -2px); text-shadow: -2px 0 red, 2px 0 blue; }
+    98% { transform: translate(2px, 2px); }
+}
+
+#about{
+    transform: translateY(400px);
+}
+.sobre_mim {
+    color: white;
+    text-align: start;
+    font-family: monospace;
+    margin: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
+}
+.sobre_mim h2{
+    font-family: 'Courier Prime';
+    color: #00ff41;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 0 0 5px #00ff41, 0 0 10px #003b00;
+    
+}
+#projects{
+     transform: translateY(500px);
+}
+.container-projetos{
+    color: white;   
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.title_project{
+    font-family: 'Courier Prime';
+    color: #00ff41;
+    font-size: 3rem;
+    text-shadow: 0 0 5px #00ff41, 0 0 10px #003b00;
+    text-align: center;
+}
+.projeto{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
+    padding: 20px;
+    width: 300px;
+    font-family: monospace;
+    
+}
+.projeto h3{
+    color: #08850e;
+}
+.projeto a{
+    text-decoration: none;
+    color: #00ff41;
+}
+.projeto a:hover{
+    color: #134720;
+}
+.completo{
+    color: #08850e;
+}
+.em-andamento{
+    color: #ff0000;
+}
+.aprendendo{
+    color: #ff8c00;
+}
+#contact{
+    transform: translateY(500px);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.title_contact {
+    font-family: 'Courier Prime';
+    color: #00ff41;
+    font-size: 3rem;
+    text-shadow: 0 0 5px #00ff41, 0 0 10px #003b00;
+    text-align: center;
+}
+
+.container-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    padding: 25px;
+    border-radius: 8px;
+    min-width: 250px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    border-color: #00ff41;
+    box-shadow: 0 10px 20px rgba(0, 255, 65, 0.1);
+    background: rgba(0, 255, 65, 0.05);
+}
+
+.contact-card h3 {
+    color: #00ff41;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-family: 'Courier New', monospace;
+}
+
+.contact-card p, .contact-card a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    word-break: break-all;
+    transition: color 0.3s;
+}
+
+.contact-card a:hover {
+    color: #00ff41;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        width: 100%;
+    }
+}
