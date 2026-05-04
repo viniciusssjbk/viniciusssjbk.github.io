@@ -14,13 +14,13 @@ body{
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: #00000000;
+    background-color: #ffffff00;
     border-radius: 50%;
-    padding-left: 15px;
+    padding-left: 10px;
     font-size: 30px;    
     cursor: pointer;
     z-index: 1000;
-    color: blue ; 
+
     border: #00e1ff 2px solid;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     opacity: 0;
@@ -30,7 +30,12 @@ body{
 #voltar_topo:hover {
     transform: translateY(-5px);
 }
-
+#voltar_topo button {
+    background: none;
+    border: none;
+    color:  rgb(0, 255, 157) ;
+    cursor: pointer;
+}
 .container{
     margin-top: 10px;
 }
@@ -70,18 +75,11 @@ body{
         color: white;
     }
 }
-@media (max-width: 600px) {
-  .navbar {
-    font-size: 12px;
-    justify-content: end;
-  }
-  .navbar a {
-    padding: 5px;
-  }
-  .logo {
-    font-size: 24px;
-  
-  }
+
+
+#robo{
+    background-color: transparent;
+    border: none;
 }
 #fundo {
     position: fixed;
@@ -91,42 +89,77 @@ body{
     height: 100%;
     z-index: -1; 
 }
-.principal{
-    color: white;
-    text-align: start;
-    padding: 50px;
-    font-family: monospace;
 
+
+.principal {
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    
 }
-.principal h2{
-    font-family: 'Courier Prime';
-    color: #00e1ff;
-    font-size: 3rem;
-    text-align: center;
+
+.principal h2 {
+    font-size: 4rem;
+    font-weight: 900;
     text-transform: uppercase;
-    position: relative;
-    text-shadow: 0 0 5px #0044ff, 0 0 10px #003cff;
-    animation: matrix-glow 2s infinite, glitch 5s infinite;
+    margin-bottom: 10px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px white; 
+    animation: fill-animation 3s ease-in-out infinite alternate;
 }
-.principal p{
-    font-size: 20px;
+
+.principal_texto{
+    font-family: monospace;
+    color: #00d2ff; 
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.principal p {
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    text-align: justify;
+}
+
+.luzes {
     color: white;
-    text-align: center;
+    font-weight: bold;
+}
+
+.luzes_azul_escuro {
+    color: #2929ff;
+    font-weight: bold;
+}
+
+.luzes_ciano {
+    color: #2189ff;
+    font-weight: bold;
 }
 
 
-
-@keyframes matrix-glow {
-    0%, 100% { opacity: 1; text-shadow: 0 0 5px #1099e9; }
-    50% { opacity: 0.8; text-shadow: 0 0 20px #00a2ff, 0 0 30px #062066; }
+@keyframes fill-animation {
+    0% {
+        color: transparent;
+        -webkit-text-stroke: 1.5px white;
+        text-shadow: none;
+    }
+    100% {
+        color: white; 
+        -webkit-text-stroke: 1.5px white;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    }
 }
 
-@keyframes glitch {
-    0%, 90%, 100% { transform: translate(0); }
-    92% { transform: translate(-2px, 2px); color: rgb(245, 208, 0); }
-    94% { transform: translate(2px, -2px); }
-    96% { transform: translate(-2px, -2px); text-shadow: -2px 0 rgb(200, 255, 0), 2px 0 rgb(217, 255, 0); }
-    98% { transform: translate(2px, 2px); }
+.img_principal img {
+    max-width: 400px;
+    filter: grayscale(100%); 
+    transition: 0.5s;
+    border-radius: 10px;
+    opacity: 0.5;
+    filter: blur(2px);
 }
 
 #about{
@@ -138,8 +171,8 @@ body{
     text-align: start;
     font-family: monospace;
     margin: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5%;
+
+    
 }
 .sobre_mim h2{
     font-family: 'Courier Prime';
@@ -168,6 +201,7 @@ body{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-top: 10px;
 }
 .titulo_projeto{
     font-family: 'Courier Prime';
@@ -177,17 +211,18 @@ body{
     text-align: center;
 }
 .projeto{
-    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 5%;
     padding: 20px;
     width: 300px;
     font-family: monospace;
+    filter: blur(2px);
     
 }
 .projeto:hover{
     background-color: rgba(57, 83, 167, 0.2);
     transition: background-color 0.3s ease;
     transform: translateY(-10px);
+    filter: blur(0px);
 }
 .projeto p{
     color: white;
@@ -279,7 +314,29 @@ body{
 .contatos a:hover {
     color: #006eff;
 }
-
+@media (max-width: 600px) {
+  .navbar {
+    font-size: 12px;
+    justify-content: end;
+  }
+  .navbar a {
+    padding: 5px;
+  }
+  .logo {
+    font-size: 24px;
+  
+  }
+  .img_robo{
+        width: 90%;
+        height: 90%;
+  }
+  .principal h2 {
+    font-size: 2.5rem;
+  }
+  .principal{
+    flex-wrap: wrap;
+  }
+}
 @media (max-width: 768px) {
     .contatos {
         width: 100%;
