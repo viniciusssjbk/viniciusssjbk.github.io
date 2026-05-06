@@ -975,7 +975,9 @@ body.light-theme {
     background-color: rgba(192, 192, 192, 0.9);
     color: #1a1a1a;
 }
-
+.light-theme .projeto{
+    animation: neon_c 2s infinite ease-in-out;
+}
 .light-theme .projeto h3 {
     color: #1f3a8a;
 }
