@@ -385,7 +385,7 @@ input:checked + .slider:before {
     height: 10px;
     background-color: transparent;
     border-radius: 30px;
-    box-shadow: 0 0 5px #9dff00;
+    box-shadow: 0 0 5px #d9ff00;
 }
 
 .nivel {
@@ -505,6 +505,24 @@ input:checked + .slider:before {
         box-shadow: 
             0 0 5px #00ffff,
             0 0 10px #00ffff;
+    }
+}
+
+@keyframes neon_c{
+    0%{
+        box-shadow: 
+            0 0 5px #3700ff,
+            0 0 10px #3700ff;
+    }
+    50%{
+        box-shadow: 
+            0 0 20px #ffc400,
+            0 0 40px #ffc400;
+    }
+    100%{
+        box-shadow: 
+            0 0 5px #3700ff,
+            0 0 10px #3700ff;
     }
 }
 
@@ -941,6 +959,12 @@ body.light-theme {
 .light-theme .titulo_contato {
     color: #1f3a8a;
     text-shadow: none;
+}
+.light-theme .nivel{
+    background: linear-gradient(60deg, rgb(0, 74, 80), rgb(0, 217, 255));
+}
+.light-theme .container_barra{
+    box-shadow: 0 0 5px rgb(0, 74, 80);
 }
 
 .light-theme #projects{
