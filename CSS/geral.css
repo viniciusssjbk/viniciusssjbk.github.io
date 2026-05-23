@@ -153,7 +153,7 @@ input:checked + .slider:before {
     
     padding-top: 150px;
     min-height: 100vh;
-    background-image: url("fundo.gif");
+    background-image: url("../imagens/fundo.gif");
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -435,6 +435,7 @@ input:checked + .slider:before {
 }
 
 .projeto{
+    transition: 0.5s;
     border-radius: 5%;
     padding: 30px;
     width: 25%;
@@ -447,18 +448,19 @@ input:checked + .slider:before {
 }
 .projeto:hover{
     transition: 0.5s;
-    background-color: rgba(0, 10, 10, 0.2);
+    background-color: rgb(0, 63, 63);
     transform: translateY(-10px);
 }
 .projeto p{
-    font-family: 'VT323';
+    font-family: 'Courier New', monospace;
     color: white;
     text-align: center;
     font-size: 110%;
 }
 .projeto h3{
-    font-family:'Russo One';
+    font-family: 'Orbitron', sans-serif;
     color: #eeff00;
+    text-shadow: 0 0 5px #d9ff00, 0 0 10px #7c7e02;
     font-weight: bold;
     font-size: 130%;
 
@@ -466,6 +468,7 @@ input:checked + .slider:before {
 .projeto a {
     display: inline-block;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding: 8px 15px;
     border: 2px solid #00ffff;
     border-radius: 10px;
@@ -498,8 +501,8 @@ input:checked + .slider:before {
     }
     50%{
         box-shadow: 
-            0 0 20px #ff00cc,
-            0 0 40px #ff00cc;
+            0 0 20px #ffae00,
+            0 0 40px #ffa600;
     }
     100%{
         box-shadow: 
@@ -813,6 +816,7 @@ input:checked + .slider:before {
   
   .projeto p {
     font-size: 0.75rem;
+   
   }
   
   .projeto a {
@@ -912,7 +916,7 @@ body.light-theme {
     background-color: #f0f0f0;
 }
 .light-theme #home {
-    background-image: url("fundo_claro.gif"); 
+    background-image: url("../imagens/fundo_claro.gif"); 
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -955,10 +959,13 @@ body.light-theme {
 .light-theme .titulo_habilidade,
 .light-theme .nome,
 .light-theme .porcentagem,
-.light-theme .titulo_projeto,
 .light-theme .titulo_contato {
     color: #1f3a8a;
     text-shadow: none;
+}
+.light-theme .titulo_projeto{
+    color: #1f3a8a;
+    text-shadow: 0 0 5px #0026ff, 0 0 10px #02387e;
 }
 .light-theme .nivel{
     background: linear-gradient(60deg, rgb(0, 74, 80), rgb(0, 217, 255));
@@ -979,9 +986,20 @@ body.light-theme {
     animation: neon_c 2s infinite ease-in-out;
 }
 .light-theme .projeto h3 {
-    color: #1f3a8a;
+    color: #001d74;
+    text-shadow: 0 0 5px #3045be, 0 0 10px #2267c0;
 }
-
+.light-theme .aprendendo{
+    color: #9c5600;
+    text-shadow: 0 0 5px #ffb255, 0 0 10px #ffb255;
+}
+.light-theme .completo{
+    color: #008b07;
+    text-shadow: 0 0 5px #46ff4f, 0 0 10px #46ff4f;
+}.light-theme .em-andamento{
+    color: #570000;
+    text-shadow: 0 0 5px #ff2727, 0 0 10px #ff2727;
+}
 .light-theme .contatos {
     background: rgba(0, 0, 0, 0.05);
     border-color: #1f3a8a;
@@ -1007,3 +1025,11 @@ body.light-theme {
 .light-theme #voltar_topo button{
     color: black;
 }
+.light-theme .luzes_rosado{
+    color: #2962ff;
+    text-shadow: 0 0 5px #4929ff67;
+}
+.light-theme .luzes{
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff005b;
+}   

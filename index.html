@@ -1,261 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Portifólio - Vinicius Santos de Oliveira</title>
-
-    <link rel="icon" href="buraco-negro.png">
-    <link rel="stylesheet" href="style.css">
-   
+    <title>Home</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="imagens/buraco-negro.png">
 </head>
-<!--
-|***********************************|
-|Autor: VINICIUS SANTOS DE OLIVEIRA |
-|Username: viniciusssjbk            |
-|Date: 2026-05-02                   |
-|***********************************|
---> 
-
 <body>
-    <div id="voltar_topo"><button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button></div>
-    <div class="container_navbar">
-        <div class="row">
-            <div class="col-2">
-                <h4 class="logo" value="Viniccius13">V.S.O</h4>
+    <div class="painel" id="painel" >
+        <h1 class="titulo">FAÇA SUA ESCOLHA</h1>
+        <div class="divisoria">
+            <div class="linha1">
+                Explore o meu site e venha conhecer mais sobre mim e a minha trajetoria.
             </div>
-            <div class="col-10">
-                <div class="navbar">
-                    <a href="#home">HOME</a>
-                    <a href="#about">SOBRE</a>
-                    <a href="#contact">CONTATO</a>
-                    <a href="#projects">PROJETOS</a>
-                     <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider"></span>
-                    </label>
-                </div>
+            <div class="imagem sobre_mim" >
+                <img src="imagens/piratas.png" alt="Sobre mim" onclick="window.open('sobre_mim.html');window.close()">
             </div>
-        </div>
-        
-    </div>
-
-    <section id="home">
-
-   
-        <div class="principal">
-            <div>
-                <h2>Vinicius S. Oliveira</h2>
-                <div class="principal_texto"><label>Computer Science Student</label></div>
-                <p class="texto_principal">A <span class="luzes ">imaginação</span> é mais importante que o <span class="luzes">conhecimento</span> <br>O conhecimento é <span class="luzes_rosado">limitado</span>. A imaginação <span class=" luzes_rosado">envolve o mundo</span>.</p><p class="subtitulo"> Albert Einstein</p>
+            <div class="imagem projetos" >
+                <img src="imagens/astronauta.png" alt="Projetos" onclick="window.open('projetos.html');window.close()">
             </div>
-            <div class="img_principal" >
-                <button id="robo" onclick="alerta_robo()" onmousemove="subir()" onmouseleave="descer()">
-                <img src="robo_13.png" alt="robot"  class="img_robo"></button>
-            </div>
-
-
-
-            
-        </div>
-        
-        
-    </section>
-    <section id="about">
-        <h2 class="titulo_sobre_mim">SOBRE MIM</h2>
-        <div class="sobre_mim">
-            <br>
-            <div class="sobre_mim_texto">Estudante de <span class="luzes">Ciência da Computação na FEI</span>, com formação técnica em <span class="luzes">Informática para Internet pela Etec Lauro Gomes</span>. Tenho interesse em áreas como desenvolvimento de software, robótica, automação, sistemas embarcados e analise de dados, sempre buscando aprender novas ferramentas e aprofundar meus conhecimentos.</div>
-            <div class="sobre_mim_texto">Atualmente faço parte do time <span class="luzes">RoboFEI Humanoide</span>, onde participo de projetos voltados ao desenvolvimento e aprimoramento de robôs humanoides para competições de futebol. Nesse ambiente colaborativo, tenho contato com programação, onde realizo tarefas como mexer nos parâmetros do robôs, buscar métodos para melhorar as movimentações dos robôs e resolução de problemas técnicos, sempre contribuindo para a evolução contínua do projeto.</div>
-        </div>
-
-         <div class="habilidades">
-        <h3 class="titulo_habilidade">▸ HABILIDADES ◂</h3>
-        <div class="container_habilidade">
-            <div class="barra">
-                <span class="nome">PYTHON</span>
-                <div class="container_barra">
-                    <div class="nivel"  data-nivel="90"></div>
-                </div>
-                <span class="porcentagem">90%</span>
-            </div>
-            <div class="barra">
-                <span class="nome">SQL</span>
-                <div class="container_barra">
-                    <div class="nivel"  data-nivel="70"></div>
-                </div>
-                <span class="porcentagem">70%</span>
-            </div>
-            <div class="barra">
-                <span class="nome">C</span>
-                <div class="container_barra">
-                    <div class="nivel"  data-nivel="80"></div>
-                </div>
-                <span class="porcentagem">80%</span>
-            </div>
-            <div class="barra">
-                <span class="nome">C++</span>
-                <div class="container_barra">
-                    <div class="nivel"  data-nivel="75"></div>
-                </div>
-                <span class="porcentagem">75%</span>
-            </div>
-            <div class="barra">
-                <span class="nome">JAVASCRIPT</span>
-                <div class="container_barra">
-                    <div class="nivel"  data-nivel="80"></div>
-                </div>
-                <span class="porcentagem">80%</span>
-            </div>
-            <div class="barra">
-                <span class="nome">HTML/CSS</span>
-                <div class="container_barra">
-                    <div class="nivel"  data-nivel="70"></div>
-                </div>
-                <span class="porcentagem">70%</span>
-            </div>
-            <div class="barra">
-                <span class="nome">ROS2</span>
-                <div class="container_barra">
-                    <div class="nivel"  data-nivel="60"></div>
-                </div>
-                <span class="porcentagem">60%</span>
-            </div>
-            <div class="barra">
-                <span class="nome">LINUX</span>
-                <div class="container_barra">
-                    <div class="nivel"  data-nivel="60"></div>
-                </div>
-                <span class="porcentagem">60%</span>
+            <div class="linha2">
+                Venha analisar meus projetos e minhas habilidades.
             </div>
         </div>
     </div>
 
-
-    </section>
-    <section id="contact">
-        <h2 class="titulo_contato">CONTATO</h2>
-        <br>
-        <div class="container_contato">
-            <div class="contatos">
-                <h3>EMAIL</h3>
-                <a href="mailto:vinidev.santis@gmail.com">vinidev.santis@gmail.com</a>
-            </div>
-            <div class="contatos">
-                <h3>TELEFONE</h3>
-                <p>(11) 94117-0462</p>
-            </div>
-            <div class="contatos">
-                <h3>GITHUB</h3>
-                <a href="https://github.com/viniciusssjbk" target="_blank">github.com/viniciusssjbk</a>
-            </div>
-            <div class="contatos">
-                <h3>LINKEDIN</h3>
-                <a href="https://www.linkedin.com/in/vinicius-santos-4654a2320" target="_blank">vinicius-santos-oliveira</a>
-            </div>
-        </div>
-    </section>
-<section id="projects">
-    <h2 class="titulo_projeto">PROJETOS</h2>
-    <br>
-    <div class="container-projetos">
-        
-        <div class="projeto">
-            <h3>CALCULADORA</h3>
-            <p>Aplicação interativa desenvolvida com HTML, CSS e JavaScript, focada na manipulação do DOM e execução de operações matemáticas em tempo real.</p>
-            <a href="https://github.com/viniciusssjbk/Calculadora">Ver mais</a>
-            <p>status: <strong class="completo">completo</strong></p>
-        </div>
-    
-    
-        <div class="projeto">
-            <h3>DAMA</h3>
-            <p>Jogo de damas desenvolvido com HTML, CSS e JavaScript, explorando lógica de movimentação, regras do jogo e interatividade no navegador.</p>
-            <a href="https://github.com/viniciusssjbk/DAMA">Ver mais</a>
-            <p>status: <strong class="em-andamento">em andamento</strong></p>
-        </div>
-    
-    
-        <div class="projeto">
-            <h3>FEIFOOD</h3>
-            <p>Sistema desenvolvido em Python inspirado em plataformas de delivery, com foco em organização de dados e simulação de pedidos.</p>
-            <a href="https://github.com/viniciusssjbk/IFOODFEI">Ver mais</a>
-            <p>status: <strong class="completo">completo</strong></p>
-        </div>
-    </div>
-
-    <div class="container-projetos">
-        <div class="projeto">
-            <h3>JOGO EM HTML</h3>
-            <p>Jogo completo desenvolvido com HTML, CSS e JavaScript, focado em eventos, interatividade e experiência do usuário.</p>
-            <a href="https://github.com/viniciusssjbk/JOGO_FULLSTACK">Ver mais</a>
-            <p>status: <strong class="completo">completo</strong></p>
-        </div>
-
-        <div class="projeto">
-            <h3>ARDUINO</h3>
-            <p>Repositório de projetos com Arduino envolvendo automação, controle de hardware e integração entre componentes eletrônicos e software.</p>
-            <a href="https://github.com/viniciusssjbk/Arduino">Ver mais</a>
-            <p>status: <strong class="aprendendo">aprendizagem</strong></p>
-        </div>
-
-        <div class="projeto">
-            <h3>JOGO DA VELHA</h3>
-            <p>Implementação do clássico jogo da velha em Python, com foco em lógica condicional e interação com o usuário.</p>
-            <a href="https://github.com/viniciusssjbk/jogo_da_velha">Ver mais</a>
-            <p>status: <strong class="completo">completo</strong></p>
-        </div>
-    </div>
-
-    <div class="container-projetos">
-        <div class="projeto">
-            <h3>FEITV</h3>
-            <p>Projeto desenvolvido em C com foco em desempenho, manipulação de dados e compreensão de programação de baixo nível.</p>
-            <a href="https://github.com/viniciusssjbk/FEITV">Ver mais</a>
-            <p>status: <strong class="em-andamento">em andamento</strong></p>
-        </div>
-
-        <div class="projeto">
-            <h3>TAREFAS C++</h3>
-            <p>Repositório com exercícios e projetos em C++, focado no desenvolvimento da lógica e conceitos de programação orientada a objetos.</p>
-            <a href="https://github.com/viniciusssjbk/C-">Ver mais</a>
-            <p>status: <strong class="aprendendo">aprendizagem</strong></p>
-        </div>
-
-        <div class="projeto">
-            <h3>TAREFAS ROS2</h3>
-            <p>Projetos utilizando ROS2 voltados para robótica, com comunicação entre nós e construção de sistemas distribuídos.</p>
-            <a href="https://github.com/viniciusssjbk/Tarefa-ROS2">Ver mais</a>
-            <p>status: <strong class="aprendendo">aprendizagem</strong></p>
-        </div>
-    </div>
-
-    <div class="container-projetos">
-        <div class="projeto">
-            <h3>FULL STACK</h3>
-            <p>Repositório dedicado a projetos full stack, integrando front-end e back-end na construção de aplicações completas.</p>
-            <a href="https://github.com/viniciusssjbk/FullStack_2025.2">Ver mais</a>
-            <p>status: <strong class="aprendendo">aprendizagem</strong></p>
-        </div>
-    </div>
-</section>
-<section id="footer">
-    <div class="container_rodape">
-        <div>Entre em contado:</div>
-        <div>vinidev.santis@gmail.com <br> (11)94117-0462</div>
-    </div>
-    <p class="texto_rodape">Criado por viniciusssjbk</p>
-</section>
-    
-<script src="index.js"></script>
-
+    <script src="index.js"></script>
 </body>
 </html>

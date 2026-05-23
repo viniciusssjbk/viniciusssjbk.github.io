@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Portifólio - Vinicius Santos de Oliveira</title>
+
+    <link rel="icon" href="imagens/buraco-negro.png">
+    <link rel="stylesheet" href="CSS/geral.css">
+   
+</head>
+<!--
+|***********************************|
+|Autor: VINICIUS SANTOS DE OLIVEIRA |
+|Username: viniciusssjbk            |
+|Date: 2026-05-02                   |
+|***********************************|
+--> 
+
+<body>
+    <div id="voltar_topo"><button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button></div>
+    <div class="container_navbar">
+        <div class="row">
+            <div class="col-2">
+                <h4 class="logo" value="Viniccius13" onclick="window.open('index.html');window.close()">V.S.O</h4>
+            </div>
+            <div class="col-10">
+                <div class="navbar">
+                    <a href="index.html">MENU</a>
+                    <a href="#home">HOME</a>
+                    <a href="#about">SOBRE</a>
+                    <a href="#contact">CONTATO</a>
+                     <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <section id="home">
+
+   
+        <div class="principal">
+            <div>
+                <h2>Vinicius S. Oliveira</h2>
+                <div class="principal_texto"><label>Computer Science Student</label></div>
+                <p class="texto_principal">A <span class="luzes ">imaginação</span> é mais importante que o <span class="luzes">conhecimento</span> <br>O conhecimento é <span class="luzes_rosado">limitado</span>. A imaginação <span class=" luzes_rosado">envolve o mundo</span>.</p><p class="subtitulo"> Albert Einstein</p>
+            </div>
+            <div class="img_principal" >
+                <button id="robo" onclick="alerta_robo()" onmousemove="subir()" onmouseleave="descer()">
+                <img src="imagens/robo_13.png" alt="robot"  class="img_robo"></button>
+            </div>
+
+
+
+            
+        </div>
+        
+        
+    </section>
+    <section id="about">
+        <h2 class="titulo_sobre_mim">SOBRE MIM</h2>
+        <div class="sobre_mim">
+            <br>
+            <div class="sobre_mim_texto">Estudante de <span class="luzes">Ciência da Computação na FEI</span>, com formação técnica em <span class="luzes">Informática para Internet pela Etec Lauro Gomes</span>. Tenho interesse em áreas como desenvolvimento de software, robótica, automação, sistemas embarcados e analise de dados, sempre buscando aprender novas ferramentas e aprofundar meus conhecimentos.</div>
+            <div class="sobre_mim_texto">Atualmente faço parte do time <span class="luzes">RoboFEI Humanoide</span>, onde participo de projetos voltados ao desenvolvimento e aprimoramento de robôs humanoides para competições de futebol. Nesse ambiente colaborativo, tenho contato com programação, onde realizo tarefas como mexer nos parâmetros do robôs, buscar métodos para melhorar as movimentações dos robôs e resolução de problemas técnicos, sempre contribuindo para a evolução contínua do projeto.</div>
+        </div>
+
+         
+    </section>
+    <section id="contact">
+        <h2 class="titulo_contato">CONTATO</h2>
+        <br>
+        <div class="container_contato">
+            <div class="contatos">
+                <h3>EMAIL</h3>
+                <a href="mailto:vinidev.santis@gmail.com">vinidev.santis@gmail.com</a>
+            </div>
+            <div class="contatos">
+                <h3>TELEFONE</h3>
+                <p>(11) 94117-0462</p>
+            </div>
+            <div class="contatos">
+                <h3>GITHUB</h3>
+                <a href="https://github.com/viniciusssjbk" target="_blank">github.com/viniciusssjbk</a>
+            </div>
+            <div class="contatos">
+                <h3>LINKEDIN</h3>
+                <a href="https://www.linkedin.com/in/vinicius-santos-4654a2320" target="_blank">vinicius-santos-oliveira</a>
+            </div>
+        </div>
+    </section>
+<section id="footer">
+    <div class="container_rodape">
+        <div>Entre em contado:</div>
+        <div>vinidev.santis@gmail.com <br> (11)94117-0462</div>
+    </div>
+    <p class="texto_rodape">Criado por viniciusssjbk</p>
+</section>
+    
+<script src="JS/principal.js"></script>
+<script src="JS/sobre_mim.js"></script>
+</body>
+</html>

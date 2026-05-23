@@ -1,34 +1,39 @@
-var animatedSobre = false;
-var animatedProjetos = false;
-var animatedContatos = false;
+var escuro = true;
+var retroAudio = new Audio("audio/retro_80s.mp3");
+var jazzyAudio = new Audio("audio/lo-fi_jazz.mp3");
+retroAudio.loop = true;
+jazzyAudio.loop = true;
 
+var conversando = false;
+var robo_img = document.querySelector(".img_robo");
+
+var musica;
 const themeSwitch = document.querySelector(".switch input");
 const body = document.body;
-
-
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
-    themeSwitch.checked = true;
-    body.classList.add("light-theme");
-} else {
-    themeSwitch.checked = false;
-    body.classList.remove("light-theme");
-}
 
 
 themeSwitch.addEventListener("change", function() {
     if (this.checked) {
         body.classList.add("light-theme");
         localStorage.setItem("theme", "light");
+        escuro = false;
     } else {
         body.classList.remove("light-theme");
         localStorage.setItem("theme", "dark");
+        escuro = true;
+    }
+
+   
+    if (conversando) {
+        if (musica) musica.pause();
+        musica = escuro ? retroAudio : jazzyAudio;
+        musica.play();
     }
 });
 
 
-async function iniciarConversa() {
-    await Swal.fire({
+function alerta() {
+    Swal.fire({
         title: "SISTEMA J.A.R.V.I.S.",
         text: "Sistema ativado.",
         icon: "info",
@@ -40,48 +45,29 @@ async function iniciarConversa() {
 }
 
 
-window.addEventListener("scroll", () => {
-    const posicaoScroll = window.scrollY;
-    const setaTopo = document.getElementById("voltar_topo");
-    const sobre = document.getElementById("about");
-    const projetos = document.getElementById("projects");
-    const contatos = document.getElementById("contact");
-    
-    if (posicaoScroll > 150) {
-        setaTopo.style.display = "flex";
-        setaTopo.style.opacity = "0.7";
-    } else {
-        setaTopo.style.display = "none";
-        setaTopo.style.opacity = "0";
-    }
-  
-    if (posicaoScroll >= 350 && posicaoScroll < 850 && !animatedSobre) {
-        sobre.style.animation = "fadeIn 2s forwards";
-        animatedSobre = true;
-    } else if (posicaoScroll >= 850 && posicaoScroll < 1950 && !animatedProjetos) {
-        contatos.style.animation = "fadeIn 2s forwards";
-        animatedProjetos = true;
-    } else if (posicaoScroll >= 1950 && !animatedContatos) {
-        projetos.style.animation = "fadeIn 2s forwards";
-        animatedContatos = true;
-    }
-});
-
-var conversando = false;
-var robo_img = document.querySelector(".img_robo");
-
 function alerta_robo() {
     if (conversando == false) {
         conversando = true;
         robo_img.style.opacity = "1";
         robo_img.style.filter = "grayscale(0%)";
         robo_img.style.transform = "translateY(-10px)";
-        iniciarConversa(); 
+        alerta(); 
+        if(escuro) {
+            musica = retroAudio;
+        } 
+        else{
+             musica = jazzyAudio;
+        }
+        musica.play();
     } else {
         conversando = false;
         robo_img.style.opacity = "0.5";
         robo_img.style.filter = "grayscale(100%)";
         robo_img.style.transform = "translateY(0)";
+        if (musica) {
+            musica.pause();
+            musica.currentTime = 0;
+        }
     }
 }
 
