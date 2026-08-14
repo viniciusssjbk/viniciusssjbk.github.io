@@ -3,327 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Disparue</title>
+    <title>Error 404 Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
 </head>
-<style>
-      * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        body { background-color: #111111; }
+        div {
+            margin-top: 0px;
+            padding: 40px;
+            font-size: 95px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            font-family: 'Monoton', cursive;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 0 80px red, 0 0 30px firebrick, 0 0 6px darkred;
+            color: red;
+        }
+            div p { margin: 5px; }
+        #error { color: #FFFFFF; text-shadow: 0 0 80px #FFFFFF, 0 0 30px #008000, 0 0 6px #0000FF; }
+            #error:hover { text-shadow: 0 0 200px #FFFFFF, 0 0 80px #008000, 0 0 6px #0000FF; }
+            #error span { animation: upper 11s linear infinite; }
+                @keyframes upper {
+                    0%, 19.999%, 62.999%, 70%, 100% { opacity: .99; text-shadow: 0 0 80px #FFFFFF, 0 0 30px #008000, 0 0 6px #0000FF; }
+                    20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: .4; text-shadow: none; }
+                }
+        #code:hover { text-shadow: 0 0 100px red, 0 0 40px firebrick, 0 0 8px darkred; }
+        #code span:nth-of-type(2) { animation: lower 10s linear infinite; }
+        #code span:nth-of-type(1) { text-shadow: none; opacity: .4; }
+            @keyframes lower {
+                0%, 12%, 18.999%, 23%, 31.999%, 46%, 49.999%, 51%, 58.999%, 68.999%, 71%, 78.999%, 96%, 100% { opacity: .99; text-shadow: 0 0 80px red, 0 0 30px firebrick, 0 0 6px darkred; }
+                19%, 22.999%, 32%, 36.999%, 50%, 55.999%, 64%, 69.999%, 86%, 89.999% { opacity: .4; text-shadow: none; }
+            }
 
-body {
-    background: #0a0a1a;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-    cursor: none;
-}
-
-.container {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-/* Bougie */
-.candle-container {
-    position: relative;
-    width: 200px;
-    height: 400px;
-    margin: 0 auto 2rem;
-    filter: drop-shadow(0 0 10px rgba(255,100,0,0.3));
-}
-
-.candle {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 200px;
-    background: linear-gradient(90deg, #fff0e6 0%, #ffffff 100%);
-    border-radius: 2px;
-    animation: melt 20s infinite linear;
-}
-
-.wax-drips {
-    position: absolute;
-    bottom: -10px;
-    width: 100%;
-    height: 20px;
-}
-
-.wax-drips::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 20%;
-    width: 8px;
-    height: 15px;
-    background: #fff0e6;
-    border-radius: 0 0 4px 4px;
-    animation: drip 8s infinite;
-}
-
-/* Flamme */
-.flame {
-    position: absolute;
-    width: 25px;
-    height: 80px;
-    background: linear-gradient(180deg, #ffaa00 0%, #ff4400 100%);
-    border-radius: 50% 50% 35% 35%;
-    filter: blur(2px);
-    transform-origin: bottom center;
-}
-
-.glow {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle at 50% 50%, rgba(255,100,0,0.3) 0%, transparent 60%);
-}
-
-/* Fumée */
-.smoke {
-    position: absolute;
-    width: 10px;
-    height: 50px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
-    filter: blur(5px);
-    opacity: 0;
-}
-
-/* Texte */
-.error-code {
-    font-size: 8rem;
-    background: linear-gradient(45deg, #ff6b00, #ff0000, #ffaa00);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin: 1rem 0;
-    text-shadow: 0 0 20px rgba(255,100,0,0.5);
-}
-
-.error-message {
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-.home-link {
-    display: inline-block;
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-}
-
-/* Animations */
-@keyframes melt {
-    0%, 100% { height: 200px; }
-    50% { height: 190px; }
-}
-
-@keyframes drip {
-    0% { transform: translateY(0); opacity: 0; }
-    20% { opacity: 1; }
-    100% { transform: translateY(20px); opacity: 0; }
-}
-
-/* 404.css */
-.candle-container {
-    position: relative;
-    width: 200px;
-    height: 400px;
-    margin: 0 auto 2rem;
-}
-
-/* Position corrigée de la flamme */
-.flame {
-    position: absolute;
-    top: -90px; /* Ajustement de la position verticale */
-    left: 50%;
-    width: 25px;
-    height: 80px;
-    transform: translateX(-50%) scale(0.9);
-    z-index: 2;
-}
-
-/* Animation améliorée de la bougie */
-.candle {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 200px;
-    background: linear-gradient(90deg, #fff0e6 0%, #ffffff 100%);
-    border-radius: 2px;
-    animation: 
-        melt 20s ease-in-out infinite,
-        candle-flicker 2s ease-in-out infinite;
-}
-
-/* Nouvelle animation de vacillement */
-@keyframes candle-flicker {
-    0%, 100% { transform: translateX(-50%) rotate(0.5deg); }
-    50% { transform: translateX(-50%) rotate(-0.5deg); }
-}
-
-/* Gouttes de cire réalistes */
-.wax-drip {
-    position: absolute;
-    bottom: -5px;
-    width: 100%;
-    animation: drip 8s infinite;
-}
-
-@keyframes drip {
-    0% { 
-        height: 0;
-        opacity: 0;
-        background: #fff0e6;
-    }
-    30% { 
-        height: 15px;
-        opacity: 1;
-    }
-    100% { 
-        height: 0;
-        opacity: 0;
-    }
-}
-</style>
+        @media(max-width: 520px) {
+            div { font-size: 60px; }
+        }
+        @media(max-width: 380px) {
+            div { font-size: 45px; }
+        }
+    </style>
 <body>
-    <div class="container">
-        <div class="candle-container">
-            <div class="glow"></div>
-            <div class="flame"></div>
-            <div class="candle">
-                <div class="wax-drip"></div>
-            </div>
-            <div class="smoke"></div>
-        </div>
-        <h1 class="error-code">404</h1>
-        <p class="error-message">La page que vous cherchez s'est consumée...</p>
-        <a href="/" class="home-link" id="homeLink">Retour à l'accueil</a>
-    </div>
-
-    <script>
-          document.addEventListener('DOMContentLoaded', () => {
-    const flame = document.querySelector('.flame');
-    const candle = document.querySelector('.candle');
-    const smoke = document.querySelector('.smoke');
-    const fireSound = document.getElementById('fireSound');
-    let mouseX = 0, mouseY = 0;
-
-    // Gestion audio
-    document.body.addEventListener('click', () => {
-        fireSound.play().catch(() => {});
-    }, { once: true });
-
-    // Interaction souris
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        const rect = candle.getBoundingClientRect();
-        const tilt = (e.clientX - rect.left - rect.width/2) * 0.1;
-        flame.style.transform = `translateX(-50%) rotate(${tilt}deg)`;
-    });
-
-    // Particules
-    function createParticles() {
-        const particles = 30;
-        for(let i = 0; i < particles; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            Object.assign(particle.style, {
-                left: `${Math.random() * 100}%`,
-                width: `${Math.random() * 3}px`,
-                height: particle.style.width,
-                animationDuration: `${Math.random() * 3 + 2}s`,
-                background: `rgba(255,${100 + Math.random()*155},0,${Math.random()*0.5})`
-            });
-            document.body.appendChild(particle);
-        }
-    }
-
-    // Animation bougie
-    function animateFlame() {
-        flame.style.height = `${80 + Math.random() * 5}px`;
-        flame.style.transform = `translateX(-50%) rotate(${Math.random() * 4 - 2}deg)`;
-        
-        // Fumée
-        if(Math.random() < 0.1) {
-            smoke.style.left = `${50 + Math.random() * 10 - 5}%`;
-            smoke.style.opacity = 0.4;
-            smoke.style.animation = 'smoke-float 4s forwards';
-            setTimeout(() => smoke.style.opacity = 0, 4000);
-        }
-        
-        requestAnimationFrame(animateFlame);
-    }
-
-    // Événements
-    flame.addEventListener('mouseover', () => {
-        fireSound.loop = true;
-        fireSound.play();
-    });
-
-    flame.addEventListener('mouseout', () => {
-        fireSound.pause();
-    });
-
-    // Initialisation
-    createParticles();
-    animateFlame();
-});
-
-// Particules suivies
-document.addEventListener('mousemove', (e) => {
-    const particles = document.querySelectorAll('.particle');
-    particles.forEach(particle => {
-        const dx = e.clientX - parseFloat(particle.style.left);
-        const dy = e.clientY - parseFloat(particle.style.top);
-        particle.style.transform = `translate(${dx * 0.05}px, ${dy * 0.05}px)`;
-    });
-});
-     
-// 404.js (corrections)
-document.addEventListener('DOMContentLoaded', () => {
-    // Ajustement dynamique de la flamme
-    const adjustFlamePosition = () => {
-        const candle = document.querySelector('.candle');
-        const flame = document.querySelector('.flame');
-        const candleHeight = candle.offsetHeight;
-        flame.style.top = `-${candleHeight * 0.45}px`;
-    };
-
-    window.addEventListener('resize', adjustFlamePosition);
-    adjustFlamePosition();
-    
-    // Animation améliorée
-    function animateCandle() {
-        const candle = document.querySelector('.candle');
-        const drip = document.querySelector('.wax-drip');
-        
-        candle.style.height = `${200 + Math.sin(Date.now()/5000) * 4}px`;
-        drip.style.left = `${30 + Math.random() * 40}%`;
-        
-        requestAnimationFrame(animateCandle);
-    }
-    animateCandle();
-});     
-    </script>
+      <div>
+        <p id="error">E <span>r</span>ror</p>
+        <p id="code">4<span>0</span><span>4</span></p>
+    </div>      
 </body>
-</html> 
+</html>
